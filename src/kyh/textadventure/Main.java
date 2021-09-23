@@ -6,9 +6,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Initialisering
-        String[][] map = {
-                {"A pink room", "A hall"},
-                {"The entrance", "A dark cave"}
+        Room pinkRoom = new Room("Pink room", "This is a room with pink walls filled with pink furniture");
+        Room aHall = new Room("A hall", "A large hallway with a fancy rug on the floor");
+        Room theEntrance = new Room("The entrance", "A large entrance to the map.");
+        Room aDarkCave = new Room("A dark cave", "A very dark cave without any lights, and it is close to pitch black.");
+
+        Room[][] map = {
+                {pinkRoom, aHall},
+                {theEntrance, aDarkCave}
         };
         int row = 1;
         int col = 0;
@@ -21,7 +26,9 @@ public class Main {
         // Här börjar spelloopen
         while(running) {
             // 1. Skriv ut i vilket rum vi är i
-            System.out.println(map[row][col]);
+            System.out.println(map[row][col].getName());
+            System.out.println(map[row][col].getDescription());
+
 
             // 2. Läs in kommando från användaren
             System.out.print("> ");
