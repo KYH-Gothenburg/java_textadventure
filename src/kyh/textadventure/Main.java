@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -42,6 +43,20 @@ public class Main {
         Room theEntrance = new Room("The entrance", "A large entrance to the map.");
         Room aDarkCave = new Room("A dark cave", "A very dark cave without any lights, and it is close to pitch black.");
 
+        // Creating a dagger and adding it to the room theEntrance.
+        Item dagger = new Item("Dagger", "A small but very deadly dagger.");
+        theEntrance.setItem(dagger);
+
+        // Creating a chest with three items and places it in the hall on the map.
+        Chest chest = new Chest("Chest", "A large chest containing other items");
+        Item shield = new Item("Shield", "A massive shield that works as a wall");
+        Item potion = new Item("Health potion", "A potion that restores your health");
+        Item sword = new Item("Sword", "A very sharp and mighty sword left behind by Conan the Barbarian");
+        chest.addItemsToChest(shield);
+        chest.addItemsToChest(potion);
+        chest.addItemsToChest(sword);
+        aHall.setItem(chest);
+
         Room[][] map = {
                 {pinkRoom, aHall},
                 {theEntrance, aDarkCave}
@@ -57,9 +72,10 @@ public class Main {
         // Här börjar spelloopen
         while(running) {
             // 1. Skriv ut i vilket rum vi är i
-            System.out.println(map[row][col].getName());
-            System.out.println(map[row][col].getDescription());
-
+            // System.out.println(map[row][col].getName());
+            // System.out.println(map[row][col].getDescription());
+            // System.out.println(map[row][col].getItemDescription());
+            System.out.println(map[row][col].toString());
 
             // 2. Läs in kommando från användaren
             System.out.print("> ");
@@ -112,6 +128,11 @@ public class Main {
                 else {
                     System.out.println("You can't go without any direction");
                 }
+            }
+
+            if(command.equalsIgnoreCase("look at item")) {
+                String itemDescription = map[row][col].getItemDescription();
+                System.out.println(itemDescription);
             }
 
             if(command.equalsIgnoreCase("save")) {
