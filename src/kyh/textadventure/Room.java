@@ -4,8 +4,10 @@ public class Room {
 
     // We have variables for name, description and other parameters since this is necessary to determine the players
     // current state in the world.
-    public String name;
-    public String description;
+
+    private String name;
+    private String description;
+
     public int numberOfDoors = 2;
 
     // Store the default values for name and description of a room.
