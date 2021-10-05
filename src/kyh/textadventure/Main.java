@@ -96,7 +96,7 @@ public class Main {
 
 
                 // Kontrollera att man har skrivit något efter go, alltså en riktning
-                if(commandParts.length > 2) {
+                if(commandParts.length >= 2) {
                     // Kolla efter riktning
                     if(commandParts[1].equalsIgnoreCase("north")) {
                         row--;
@@ -130,7 +130,7 @@ public class Main {
                 }
             }
 
-            if(command.equalsIgnoreCase("l00k at item")) {
+            if(command.equalsIgnoreCase("look at item")) {
                 String itemDescription = map[row][col].getItemDescription();
                 System.out.println(itemDescription);
             }
