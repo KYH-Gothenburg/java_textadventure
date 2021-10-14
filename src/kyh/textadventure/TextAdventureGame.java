@@ -77,9 +77,6 @@ public class TextAdventureGame {
         // Här börjar spelloopen
         while(running) {
             // 1. Skriv ut i vilket rum vi är i
-            // System.out.println(map[row][col].getName());
-            // System.out.println(map[row][col].getDescription());
-            // System.out.println(map[row][col].getItemDescription());
             System.out.println(map[row][col].toString());
 
             // 2. Läs in kommando från användaren
