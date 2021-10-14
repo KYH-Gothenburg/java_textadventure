@@ -5,5 +5,6 @@ public class Main {
         TextAdventureGame tag = new TextAdventureGame();
         tag.initialization();
         tag.runGame();
+        tag.quit();
     }
 }

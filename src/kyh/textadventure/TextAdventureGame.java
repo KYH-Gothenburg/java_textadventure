@@ -173,6 +173,9 @@ public class TextAdventureGame {
                 running = false;
             }
         }
+    }
+
+    public void quit() {
         System.out.println("Thanks for playing TAG");
     }
 }
